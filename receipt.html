@@ -11,25 +11,42 @@
         <h1>Receipt Printer</h1>
         
         <div class="section">
-            <h2>Add Line Item</h2>
-            <form id="itemForm">
-                <input type="text" id="itemName" placeholder="Item name" required>
-                <input type="number" id="itemPrice" placeholder="Price" step="0.01" required>
-                <button type="submit">Add Item</button>
-            </form>
+            <div class="mode-toggle">
+                <button id="receiptModeBtn" class="mode-btn active">Receipt Mode</button>
+                <button id="textModeBtn" class="mode-btn">Text Mode</button>
+            </div>
         </div>
 
-        <div class="section">
-            <h2>Receipt Items</h2>
-            <div id="receiptItems"></div>
-            <div class="total">
-                <strong>Total: $<span id="totalAmount">0.00</span></strong>
+        <div id="receiptMode" class="mode-content">
+            <div class="section">
+                <h2>Add Line Item</h2>
+                <form id="itemForm">
+                    <input type="text" id="itemName" placeholder="Item name" required>
+                    <input type="number" id="itemPrice" placeholder="Price" step="0.01" required>
+                    <button type="submit">Add Item</button>
+                </form>
+            </div>
+
+            <div class="section">
+                <h2>Receipt Items</h2>
+                <div id="receiptItems"></div>
+                <div class="total">
+                    <strong>Total: $<span id="totalAmount">0.00</span></strong>
+                </div>
+            </div>
+        </div>
+
+        <div id="textMode" class="mode-content hidden">
+            <div class="section">
+                <h2>Direct Text Print</h2>
+                <textarea id="customText" placeholder="Enter text to print..." rows="10"></textarea>
             </div>
         </div>
 
         <div class="section">
             <button id="connectBtn">Connect to Printer</button>
             <button id="printBtn" disabled>Print Receipt</button>
+            <button id="sendTextBtn" class="hidden" disabled>Send Text</button>
             <div id="status"></div>
         </div>
     </div>
