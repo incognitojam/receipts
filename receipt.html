@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Receipt Printer</title>
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Receipt Printer</h1>
+        
+        <div class="section">
+            <h2>Add Line Item</h2>
+            <form id="itemForm">
+                <input type="text" id="itemName" placeholder="Item name" required>
+                <input type="number" id="itemPrice" placeholder="Price" step="0.01" required>
+                <button type="submit">Add Item</button>
+            </form>
+        </div>
+
+        <div class="section">
+            <h2>Receipt Items</h2>
+            <div id="receiptItems"></div>
+            <div class="total">
+                <strong>Total: $<span id="totalAmount">0.00</span></strong>
+            </div>
+        </div>
+
+        <div class="section">
+            <button id="connectBtn">Connect to Printer</button>
+            <button id="printBtn" disabled>Print Receipt</button>
+            <div id="status"></div>
+        </div>
+    </div>
+
+    <script type="module" src="./app.ts"></script>
+</body>
+</html>
